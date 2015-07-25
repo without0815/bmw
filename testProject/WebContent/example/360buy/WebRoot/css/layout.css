@@ -1,0 +1,84 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+}
+
+#t_left b,#h_input,#header_2 #bt,#h3_left_dao,#navitems,#m_1 .m_left_item h3,#m_1 .m_left_item b ,.c1,#my360buy dt b,#settleup dt b{
+	background-image: url("../images/20111221C.png");
+	background-repeat: no-repeat;
+}
+
+.s_form,.si_but{
+	background-image: url("../images/20111221C.png");
+	background-repeat: repeat-x;
+	
+}
+
+
+#m_right_1 b,.m3_right .p-detail,.m_t b,.m_last{
+	background-image: url("../images/20120518A.png");
+	background-repeat: no-repeat;
+}
+
+.s_h .p_img b,.p_zhekou{
+	background-image: url("../images/20120209D.png");
+	background-repeat: no-repeat;
+}
+
+.txt,.but,.t_mf b,#m_6 .m_for .t_messf b, #my360buy dt,#my360buy dt img,#settleup dt{
+	background-image: url("../images/20120112B.png");
+	background-repeat: no-repeat;
+}
+
+
+a:LINK a:VISITED{
+	color: #333333;
+	text-decoration: none;
+}
+
+
+.p_2_img,.p_mess,.p-detail,.m_left,.m_t ,.m_t b{
+	overflow: hidden;
+}
+
+.p_mess,.p-detail{
+	word-wrap:break-word;
+}
+
+
+.w{
+	width:1210px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.cle{
+	clear: both;
+}
+
+
+.m_t{
+	height:39px;
+	line-height: 29px;
+	background-color:#f3f3f3;
+	border:1px solid #DDDDDD;
+	border-bottom:0px;
+	border-radius:5px 5px 0 0;
+	padding: 0px 8px;
+}
+
+.mc{
+	border: 1px solid #DDDDDD;
+	background-color: #FFFFFF;
+	border-top:0px;
+}
+
+
+.p_price ,.p_name{
+	padding-left: 10px;
+	width: 180px;
+}
+
+.smc{
+	display: block;
+}

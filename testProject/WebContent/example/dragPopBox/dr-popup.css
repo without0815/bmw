@@ -1,0 +1,101 @@
+@CHARSET "GB18030";
+.box-shadow {
+	-webkit-box-shadow: 0px 0px 6px #abacaf;
+	-moz-box-shadow: 0px 0px 6px #a7a8ae;
+	box-shadow: 0px 0px 6px #a7a8ae;
+}
+
+.border-radius {
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	color: #a7a8ae;
+}
+
+.border-radius-top {
+	border-width: 0px;
+	border-style: solid;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	color: #a7a8ae;
+}
+
+.border-radius-bottom {
+	border-width: 0px;
+	border-style: solid;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	color: #a7a8ae;
+}
+
+/*遮罩层*/
+#Mask {
+	top: 0;
+	left: 0;
+	position: absolute;
+	/* display: none; */
+	z-index: 100;
+	background: #000;
+	opacity: 0.25;
+	filter: alpha(opacity = 25);
+}
+/*弹出层*/
+#Popup {
+	top: 0;
+	left: 0;
+	width: 450px;
+	position: absolute;
+	/* display: none; */
+	border: 1px solid #c3c3c3;
+	background-color: #ffffff;
+	z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup .top, #Popup .main, #Popup .footer {
+	padding: 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup .top {
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	border-bottom: 1px solid #bfbfbf;
+	background-color: #f0f0f0;
+	cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup .close {
+	float: right;
+	cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup .main {
+	min-height: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup .footer {
+	height: 40px;
+	border-top: 1px solid #bfbfbf;
+	background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup .footer input {
+	margin-top: 5px;
+	padding: 5px 10px 4px 10px;
+	font-weight: bold;
+	background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup .footer input:hover {
+	background-color: #ffffff;
+	border-color: #ffffff;
+}

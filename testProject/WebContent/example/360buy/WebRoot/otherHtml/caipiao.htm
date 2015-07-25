@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>彩票 - 京东商城</title>
+<script>
+    document.domain = "360buy.com";
+</script>
+<style type="text/css">
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,address,big,cite,code,del,em,font,img,ins,small,strong,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;}ol,ul{list-style:none;}:focus{outline:0;}a img{border:0;}img{vertical-align:middle;}table{empty-cells:show;}ins{text-decoration:none;}del{text-decoration:line-through;}em{font-style:normal;}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner{border:none;padding:0;}
+.fl{float:left;}.fr{float:right;}.fn{float:none;}.al{text-align:left;}.ac{text-align:center;}.ar{text-align:right;}
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0;}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}.clearfix{display:inline-table;}/* Hides from IE-mac \*/*html .clearfix{height:1%;}.clearfix{display:block;}/* End hide from IE-mac */*+html .clearfix{min-height:1%;}.overflow{overflow:hidden;}
+.form label,.form input,.form select,.form textarea,.form button,.form .label{float:left;font-size:12px;}
+.block{display:block;overflow:hidden;cursor:pointer;}
+.hide{display:none;}
+.invisible{visibility:hidden;}
+.tab{overflow:hidden;zoom:1;}
+.tab li,.tab a,.tab-item{float:left;cursor:pointer;text-align:center;}
+.btn-img,.button{display:inline-block;margin:0;padding:0;border:0;text-align:center;cursor:pointer;}
+.btn-text{margin:0;padding:0;text-align:center;cursor:pointer;}
+body{font:12px/150% Arial,Verdana,"\5b8b\4f53";color:#333;background:#fff;_background-image:url(about:blank);_background-attachment:fixed;}
+h1{font:20px "microsoft yahei","\5b8b\4f53";}
+h2,h3{font-size:14px;}
+h4,h5,h6{font-size:12px;}
+a:link,a:visited{color:#333;text-decoration:none;}
+a:hover{color:#C00;text-decoration:underline;}
+a:active{color:#900;}
+/*virtuals-iframe*/
+#caipiao{position:relative;width:200px;height:95px;padding:44px 0 0 8px;}
+#caipiao a{color:#005EA7;}
+#caipiao .goodluck{position:absolute;top:14px;left:8px;}
+#caipiao .goodluck select{height:22px;padding:2px;margin-right:4px;}
+#caipiao .goodluck strong{line-height:22px;margin-right:4px;}
+#caipiao b{display:none;}
+#caipiao .numbers span{display:inline-block;margin-right:8px;font-weight:bold;}
+#caipiao .red{color:red;}
+#caipiao .blue{color:blue;}
+#caipiao .links{padding:6px 0 12px;}
+#caipiao .links a{display:inline-block;margin-right:8px;}
+#caipiao .btns .label{line-height:25px;}
+#caipiao .button{float:left;width:73px;height:25px;line-height:25px;background:url(http://misc.360buyimg.com/lib/skin/2012/i/20111221B.png) no-repeat -124px -220px;margin-right:5px;}
+.root61 #caipiao{width:224px;padding-left:84px;}
+.root61 #caipiao .goodluck{left:84px;width:224px;}
+.root61 #caipiao .btns{width:224px;}
+.root61 #caipiao b{display:block;position:absolute;top:20px;left:6px;width:70px;height:70px;background-image:url(http://misc.360buyimg.com/product/skin/2012/i/20111221D.png);background-repeat:no-repeat;line-height:200px;overflow:hidden;}
+.root61 #caipiao #ssq b{background-position:-146px 0;}
+.root61 #caipiao #dlt b{background-position:-73px 0;}
+.root61 #caipiao #fc3d b{background-position:0 0;}
+</style>
+</head>
+<body class="root61">
+<script>(function(b){if(b)document.getElementsByTagName("body")[0].className=""})(window.location.href.match(/\?990/))</script>
+<div class="form" id="caipiao">
+<form id="quick_home_form" method="post" action="">
+    <input id="lotteryNumber" name="order.lotteryNumber" type="hidden">
+
+	<div class="goodluck">
+		<strong class="label">买注</strong>
+		<select id="lotteryTypeId" name="order.lotteryTypeId" onchange="changeLotteryType()">
+			<option value="ssq" selected="selected">双色球</option>
+			<option value="dlt">大乐透</option>
+			<option value="fc3d">3D</option>
+		</select>
+        <strong class="label" id="lottery_info">试试手气吧！</strong>
+	</div>
+	<div class="" id="ssq">
+		<b>双色球</b>
+			<div class="numbers" id="ssq_ball">
+                <span class="num red">03</span>
+                <span class="num red">06</span>
+                <span class="num red">09</span>
+                <span class="num red">14</span>
+                <span class="num red">23</span>
+                <span class="num red">28</span>
+                <span class="num blue">02</span>
+			</div>
+        <div class="links">
+			<a href="javascript:" id="ssq_random_1">[机选1注]</a><a href="http://caipiao.360buy.com/lottery_ssq.html" target="_blank">[自助选号]</a>
+        </div>
+			<div class="btns">
+                <input class="button" id="ssq_buy" title="提交数据" value="提交数据" type="button">
+                <span class="label" id="promotwords-ssq"><a href="http://bbs.360buy.com/thread-347447-1-1.html" target="_blank">特定复式中奖就送618积分</a></span>
+			</div>
+	</div>
+    <div class="hide" id="dlt">
+		<b>大乐透</b>
+			<div class="numbers" id="dlt_ball">
+                <span class="num red">03</span>
+                <span class="num red">13</span>
+                <span class="num red">14</span>
+                <span class="num red">17</span>
+                <span class="num red">32</span>
+                <span class="num blue">01</span>
+                <span class="num blue">10</span>
+			</div>
+        <div class="links">
+			<a href="javascript:" id="dlt_random_1">[机选1注]</a><a href="http://caipiao.360buy.com/lottery_dlt.html" target="_blank">[自助选号]</a>
+        </div>
+			<div class="btns">
+                <input class="button" id="dlt_buy" title="提交数据" value="提交数据" type="button">
+                <span class="label" id="promotwords-dlt"><a href="http://bbs.360buy.com/thread-347447-1-1.html" target="_blank">特定复式中奖就送618积分</a></span>
+			</div>
+	</div>
+    <div class="hide" id="fc3d">
+		<b>3D</b>
+			<div class="numbers" id="fc3d_ball">
+                <span class="num red">0</span>
+                <span class="num red">4</span>
+                <span class="num red">8</span>
+			</div>
+        <div class="links">
+			<a href="javascript:" id="fc3d_random_1">[机选1注]</a><a href="http://caipiao.360buy.com/lottery_fc3d.html" target="_blank">[自助选号]</a>
+        </div>
+			<div class="btns">
+                <input class="button" id="fc3d_buy" title="提交数据" value="提交数据" type="button">
+                <span class="label" id="promotwords-fc3d"><a href="http://bbs.360buy.com/thread-347447-1-1.html" target="_blank">特定复式中奖就送618积分</a></span>
+			</div>
+	</div>
+
+</form>
+</div>
+
+<script type="text/javascript">
+    var url = "";
+    var xmlhttp = null;
+    var indexData = null;
+
+    function InitXMLHttpRequest() {
+        xmlhttp = window.XMLHttpRequest ? new window.XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHttp");
+    }
+
+    function LoadIndexJSON() {
+        if (xmlhttp == null) {
+            InitXMLHttpRequest();
+        }
+        if (xmlhttp == null) {
+            get("lottery_info").innerHTML = "<label class='red'>您的浏览器不支持</label>";
+            return false;
+        }
+        xmlhttp.open("GET", url + "/json/login/search_searchIndexData.html", false);
+        xmlhttp.setRequestHeader("Content-Type", "text/plain");
+        xmlhttp.onreadystatechange = GetIndexJSONMessage;
+        xmlhttp.send(null);
+        if (xmlhttp.status == 200 && navigator.userAgent.indexOf("Firefox") > 0) {
+            xmlhttp.onreadystatechange = GetIndexJSONMessage();
+        }
+    }
+
+    function GetIndexJSONMessage() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var jsonText = xmlhttp.responseText;
+            if (jsonText == null || jsonText == "" || jsonText == "null") {
+                indexData = "-1";
+                return;
+            }
+            indexData = eval('(' + jsonText + ')');
+        }
+    }
+
+    function get(id){return document.getElementById(id)}
+
+    function randomSelect(srcArr, selectQuantity) {
+        var arr = srcArr.slice(0);
+        var result = [];
+        for (var i = 0; i < selectQuantity; i++) {
+            var idx = Math.floor(Math.random() * arr.length);
+            result[result.length] = arr[idx];
+            arr.splice(idx, 1);
+        }
+        return result;
+    }
+
+    var ev = {
+        addEvent: function(obj, evt, fun) {
+            if (obj.addEventListener) {//for dom
+                obj.addEventListener(evt, fun, false);
+            }
+            else if (obj.attachEvent) {//for ie
+                obj.attachEvent("on" + evt, fun);
+            }
+            else {
+                obj["on" + evt] = fun
+            }//for other
+        },
+
+        getTarget: function(e) {
+            return e.target || e.srcElement;
+        }
+    };
+
+    var lotteryType = {
+        ssq: { id: "ssq", redAll: ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33"], blueAll: ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16"], redNum: '6', blueNum: '1', sorted: true, zero: true },
+        dlt: { id: "dlt", redAll: ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35"], blueAll: ["01","02","03","04","05","06","07","08","09","10","11","12"], redNum: '5', blueNum: '2', sorted: true, zero: true },
+        fc3d: { id: "fc3d", redAll: ["0","1","2","3","4","5","6","7","8","9"], blueAll: [], redNum: '3', blueNum: '0', sorted: false, zero: false }
+    };
+
+    var RandomLottery = function(lotType) {
+        var freshBtn = get(lotType.id + "_random_1"),
+                ball = get(lotType.id + "_ball").getElementsByTagName("span"),
+                running = 0;
+
+        var ballRandom = function(el, v, step, zero) {
+            var num = 0;
+            var max = zero ? 35 : 9;
+            running += 1;
+            setTimeout(function() {
+                num++;
+                if (num > 25) {
+                    running -= 1;
+                    el.innerHTML = v;
+                    return;
+                } else {
+                    var r = Math.ceil(Math.random() * max);
+                    if (zero) {
+                        el.innerHTML = Number(r) < 10 ? '0' + r.toString() : r;
+                    } else {
+                        el.innerHTML = r;
+                    }
+                    setTimeout(arguments.callee, step);
+                }
+            }, step);
+        };
+
+        var randomBall = function(id) {
+            var max;
+            var _red = randomSelect(lotType.redAll, lotType.redNum);
+            if (lotType.sorted) {
+                _red = _red.sort();
+            }
+            var _blue = randomSelect(lotType.blueAll, lotType.blueNum).sort();
+            if (lotType.sorted) {
+                _blue = _blue.sort();
+            }
+            var _a = _red.concat(_blue);
+
+            var k = 0;
+            for (var i = 0; i < _a.length; i++) {
+                ballRandom(ball[k], _a[i], 10, lotType.zero);
+                k++;
+            }
+        };
+
+        this.randomBall = randomBall;//设置接口
+
+        ev.addEvent(freshBtn, 'click', function(e) {
+            randomBall(lotType.id);
+        });
+
+        randomBall(lotType.id);
+
+        var buyBtn = get(lotType.id + "_buy");
+        ev.addEvent(buyBtn, 'click', function(e) {
+            var lotName = ev.getTarget(e);
+            if (running > 0) {
+                get("lottery_info").innerHTML = "等待号码滚动";
+                return;
+            }
+            var ballNums = [];
+            for (var i = 0; i < ball.length; i++) {
+                ballNums.push(ball[i].innerHTML);
+            }
+
+            var lotteryNumber,lotteryTypeId,issueId,issueName,canSell = false,time = 0;
+            LoadIndexJSON();
+            var idStr = lotName.id.split("_")[0];
+            switch (idStr) {
+                case lotteryType.ssq.id:
+                    lotteryNumber = "0:" + ballNums.slice(0, 6).join(' ') + '|' + ballNums.slice(6).join(' ') + ":1";
+                    lotteryTypeId = "1";
+                    issueId = indexData.currentIssueId_1;
+                    issueName = indexData.currentIssueName_1;
+                    canSell = indexData.canSell_1;
+                    time = indexData.remainTime_1;
+                    break;
+                case lotteryType.dlt.id:
+                    lotteryNumber = "0:" + ballNums.slice(0, 5).join(' ') + '|' + ballNums.slice(5).join(' ') + ":1";
+                    lotteryTypeId = "4";
+                    issueId = indexData.currentIssueId_4;
+                    issueName = indexData.currentIssueName_4;
+                    canSell = indexData.canSell_4;
+                    time = indexData.remainTime_4;
+                    break;
+                case lotteryType.fc3d.id:
+                    lotteryNumber = "0:" + ballNums.join("|") + ":1";
+                    lotteryTypeId = "2";
+                    issueId = indexData.currentIssueId_2;
+                    issueName = indexData.currentIssueName_2;
+                    canSell = indexData.canSell_2;
+                    time = indexData.remainTime_2;
+                    break;
+                default:
+                    break;
+            }
+            if (!canSell) {
+                get("lottery_info").innerHTML = "<label class='red'>临时停售</label>";
+                return false;
+            }
+            if (time < 1) {
+                get("lottery_info").innerHTML = "<label class='red'>等待新开期</label>";
+                return false;
+            }
+
+            var submitUrl = url + "/order/order_pre.html?order.lotteryTypeId=" + lotteryTypeId
+                    + "&order.issueId=" + issueId
+                    + "&order.issueName=" + issueName
+                    + "&order.lotteryNumber=" + lotteryNumber
+                    + "&order.totalStake=1&order.multi=1&order.totalFee=2";
+            window.open(submitUrl);
+            try{window.parent.pageTracker._trackEvent('Button', 'GamePrice', 'HomePage');}catch(err){}
+        });
+    };
+
+    var changeLotteryType = function() {
+        var showId = "ssq";
+        var lotteryTypeId = get("lotteryTypeId");
+        if (!lotteryTypeId) {
+            return;
+        }
+        var changeHandler = function() {
+            get("lottery_info").innerHTML = "试试手气吧！";
+            var v = lotteryTypeId.value,
+                    rid = lotteryType[v].id;
+            if (rid != showId) {
+                get(showId).className = "hide";
+                showId = rid;
+                get(showId).className = "";
+                lotteryType[v].obj.randomBall();
+            } else {
+                get(showId).className = "";
+                lotteryType[v].obj.randomBall();
+            }
+        };
+        lotteryTypeId.onchange = changeHandler;
+        for (var k in lotteryType) {
+            var v = lotteryType[k];
+            v.obj = new RandomLottery(v);
+        }
+        changeHandler();
+    };
+
+    changeLotteryType();
+</script>
+<script type="text/javascript" src="caipiao_files/hotwords.htm"></script>
+
+
+</body></html>

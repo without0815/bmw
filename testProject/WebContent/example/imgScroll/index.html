@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GB18030">
+<title>Insert title here</title>
+</head>
+
+<style>
+	.is_content{
+		width: 500px;
+		height: 500px;
+		border: 1px solid #ddd;
+	}
+	
+</style>
+	<script>
+		seajs.use(['./example/imgScroll/isMain'],function(isMain){
+			var fn_scrollImg = isMain.fn_scrollImg;		
+			fn_scrollImg.scrollImg($("#colee")[0],$("#colee1")[0],$("#colee2")[0]);
+		})
+	
+	</script>
+
+
+<body >
+	
+	<div id="colee" class="scroll_content" style="overflow: hidden; height: 353px; width: 610px;">
+		<div id="colee1" class="sc_start">
+			<p>
+				<img src="./img/CPA/AX2A6581.jpg">
+			</p>
+			<p>
+				<img src="./img/CPA/AX2A6546.jpg">
+			</p>
+			<p>
+				<img src="./img/CPA/AX2A6499.jpg">
+			</p>
+		</div>
+		<div id="colee2" class="sc_end"></div>
+	</div>
+	
+</body>
+</html>

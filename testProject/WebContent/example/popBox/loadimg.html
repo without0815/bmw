@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+.box {
+	width: 256px;
+	background-color: #f0f3f9;
+	text-align: center;
+	padding: .5em;
+}
+</style>	
+	
+
+<script>
+	
+	seajs.use("example/ajax.js", function($ajax) {
+		$("#button").bind("click", function(){
+			$ajax.get("example/popBox/beLoaded.html", function(html) {
+				document.getElementById("load").innerHTML = html;	
+			});
+		});
+	});
+
+	/* var load = (function(){
+		var imgFn={
+				imgbtnClick:function($ajax){
+					seajs.use("example/loadimg/ajax.js", function($ajax) {
+						$("#button").bind("click", function(){
+							$ajax.get("example/loadimg/beLoaded.html", function(html) {
+								document.getElementById("load").innerHTML = html;	
+							});
+						});
+					});
+				}
+		}
+		return imgFn;
+	})(); */
+</script>
+
+</head>
+<body>
+	<p><input type="button" id="button" value="点击加载" /></p>
+	<div id="load"></div>
+</body>
+</body>
+</html>

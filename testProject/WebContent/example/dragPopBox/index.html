@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GB18030">
+<title>Insert title here</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="./example/dragPopBox/dr-popup.css">
+
+<script type="text/javascript">
+	
+	
+	
+	seajs.use(["./example/dragPopBox/pop-box.js"],function(p){
+		$("._popBox a").bind("click",function(){
+			var popBox = new $pb.fn();
+			popBox.init();
+		})
+		
+	}) 
+	
+</script>
+
+<body>
+	
+	<div class="_popBox">
+		<a href="#" > popBox </a>
+	</div>
+	
+</body>
+</html>

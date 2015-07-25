@@ -1,0 +1,14 @@
+#h3_cen_dao #navitems li:HOVER{
+	background-position: 0 -161px;
+}
+
+#h3_cen_dao #navitems li:LINK{
+	background-position: 0 -315px;
+}
+
+#m_1 .m_left_item span:HOVER {
+	background-color: #FFFFFF;
+	border: 1px solid #CC3300;
+	border-right-width:0px; 	
+	z-index: 1;	
+}

@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta content="text/html" charset="utf-8" http-equiv="content-type"/>
+    <title></title>
+    <style type="text/css">
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+
+
+
+
+        .pop_de{
+            background-color: #2C3E50;
+            border: 1px solid #34495e;
+            /*border-radius: 1px 1px 1px 1px;*/
+            font-size: 12px;
+            color:white;
+        }
+
+        .checkPop_sl{
+            width: 660px;
+            z-index: 999999;
+            position: absolute;
+            top: 30px;
+            left:30px;
+            /*border-radius:5px;*/
+            /*display: none;*/
+            white-space:nowrap;
+
+        }
+        .center{
+            width: 95%;
+            margin: 0px auto;
+        }
+        .che_fn{
+            width: 100%;
+            float: left;
+        }
+        .che_fn ul{
+            float: left;
+            border-bottom: 1px solid silver;
+            padding: 5px 0px;
+            width: 100%;
+            min-height: 20px;
+        }
+        .che_fn ul li{
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+            /*position: relative;*/
+            min-width: 120px;
+            text-align: left;
+        }
+        #che_res li{
+            overflow: hidden;
+            width: 120px !important;
+        }
+        .che_fn ul li span{
+            padding: 0px 10px 0px 0px;
+            line-height: 26px;
+            display: inline-block;
+            white-space:nowrap;
+        }
+        .che_fn ul li span i{
+            margin-right:2px;
+        }
+        .che_fn ul li label{
+            display: inline-block;
+            position: relative;
+        }
+        .che_fn ul li label input{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            cursor: pointer;
+            display: none;
+        }
+
+
+        .red_i{
+            background: url("img/unable.png") no-repeat scroll 0 -210px transparent !important;
+        }
+        .green_i{
+            background: url("img/unable2.png") no-repeat scroll 0 -210px transparent !important;
+        }
+        .checkPop_sl  i{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url("img/enable.png") no-repeat scroll 0 -195px silver;
+            *vertical-align:middle;
+            *margin-right:2px;
+        }
+        .ch_enable{
+            background: url("img/unable.png") no-repeat scroll 0 -210px transparent !important;
+        }
+
+        .che_fn ul li dl{
+            position:absolute;
+            border: 1px solid silver;
+            border-radius: 2px;
+            background-color: #34495e;
+            padding: 5px 0px;
+            z-index: 1;
+            min-width:100px;
+            max-width:180px;
+            overflow: hidden;
+            left: 0px;
+            top: 0px;
+            display: none;
+            min-height:50px;
+        }
+        .che_fn ul li dd{
+            padding:0 5px;
+            white-space:nowrap;
+            /*display: inline-block;*/
+            float: left;
+        }
+        .netPolice{
+            color: #3498db;
+            /*color:rgb(186,12,52);*/
+        }
+        .checkPop_t{
+            display: inline-block;
+            line-height: 30px;
+            background-image: linear-gradient(to bottom, #2c3e50,#34495e);
+            cursor: move;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #34495e;
+        }
+        .checkPop_t label{
+            padding-left: 15px;
+        }
+
+
+        .close{
+            border: 0px;
+            background: url("img/glyphicons-halflings.png") no-repeat -312px 0;
+            height: 14px;
+            width: 14px;
+            position: absolute;
+            right: 5px;
+            top: 7px;
+        }
+
+        .close:hover{
+            background: url("img/glyphicons-halflings_oo.png") no-repeat -312px 0;
+        }
+
+    </style>
+
+
+    <script type="text/javascript" src="../jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+
+    (function($){
+        $.tool = {
+            nodeVerify:function (nodeA, nodeB) {
+                try {
+                    var bool = true;
+                    var a = [];
+                    var b = [];
+                    for (var key in nodeA) {
+                        a.push(key + ':' + nodeA[key]);
+                    }
+                    for (var key in nodeB) {
+                        b.push(key + ':' + nodeB[key]);
+                    }
+                    for (var i = 0; i < a.length; i++) {
+                        if (a[i] != b[i]) {
+                            bool = false;
+                        }
+                    }
+                    return bool;
+                } catch (e) {
+
+                }
+            },
+            jqIsShow:function (node) {
+                if (node.is(":visible") == false) {
+                    return false;
+                }
+                return true;
+            }
+        }
+    })($);
+
+        (function($){
+
+            var view = {
+                unInput:function(o,n){
+                    n.find("input[type = checkbox]").removeAttr("checked").each(function(){
+                        var id = $(this).attr("name");
+                        o.resN.find("input[type = checkbox][name = "+id+"]").parents("li").remove();
+                    });
+                    n.find("i").removeClass("ch_enable");
+                },
+                enInput:function(o,n){
+                    n.find("input[type = checkbox]").attr("checked","checked");
+                    n.find("i").addClass("ch_enable");
+                    event.bindClear($("<li>"+n.html()+"</li>").appendTo(o.resN),o);
+                },
+                changeNetPolice_i:function(n,o){
+                    n.parents("li").children("span").find("i").removeClass("red_i").removeClass('green_i');
+                    n.parents("li").find("dd").each(function(e){
+                        if($(this).attr("type") == "netPolice" && $(this).find("input[type = checkbox]").attr("checked") == "checked"){
+                            n.parents("li").children("span").find("i").addClass("red_i");
+                            return true;
+                        }else if($(this).find("input[type = checkbox]").attr("checked") == "checked"){
+                            n.parents("li").children("span").find("i").addClass("green_i");
+                            return true;
+                        }
+                    });
+                }
+            }
+
+            var event = {
+                bindEvent:function(o){
+                    this.bindInputClick(o);
+                    o.netPoliceN.find("li span").unbind("click");
+                    o.netPoliceN.find("li span").bind("click",{o:o},this.netPoliceClick);
+                    o.netPoliceN.find("dl").unbind("mouseout");
+                    o.netPoliceN.find("dl").bind("mouseout",{o:o},this.netPoliceMouseOut);
+                },
+                netPoliceMouseOut:function(e){
+                    var outNode = e.relatedTarget;
+                    if ($.contains($(this)[0], outNode)) return false;
+                    if ($.tool.nodeVerify($(this)[0], outNode))return false;
+                    $(this).hide();
+                },
+                netPoliceClick:function(e){
+                    e = jQuery.event.fix(e);
+                    var o  = e.data.o;
+                    var ddN = $(this).siblings("dl");
+                    var police_sleN  = $("#police_sle");
+                    o.netPoliceN.find("li").css("z-index",0);
+                    $(this).parents("li").css("z-index",1);
+                    if(!ddN.length > 0)return;
+                    var l_offset = {
+                        offsetLeft: $(this).offset().left,
+                        offsetTop: $(this).offset().top,
+                        offsetWidth: $(this).outerWidth(true),
+                        offsetHeight: $(this).outerHeight(true)
+                    }
+                    var p_offset = {
+                        offsetLeft:police_sleN.offset().left,
+                        offsetTop:police_sleN.offset().top,
+                        offsetWidth:police_sleN.outerWidth(true),
+                        offsetHeight: police_sleN.outerHeight(true)
+                    }
+                    var ddN_offset = {
+                        offsetLeft:ddN.offset().left,
+                        offsetTop:ddN.offset().top,
+                        offsetWidth:ddN.outerWidth(true),
+                        offsetHeight: ddN.outerHeight(true)
+                    }
+                    var x = e.pageX;
+                    var y = e.pageY;
+                    var height =  y - p_offset.offsetTop -10;
+                    o.netPoliceN.find("dl").hide();
+                    ddN.css({
+                        top:height + l_offset.offsetHeight+l_offset.offsetTop > $(window).height()?height - ddN_offset.offsetHeight+15:height,
+                        left:x - p_offset.offsetLeft - 5
+                    }).show();
+
+                },
+                bindInputClick:function(o){
+                    o.input.unbind("click");
+                    o.input.bind("click",{o:o},this.inputClickFn);
+                },
+                bindClear:function(n,o){
+                    n.unbind("click");
+                    n.bind("click",{o:o},this.clearClick);
+                },
+                clearClick:function(e){
+                    var o = e.data.o;
+                    var id = $(this).find("input[type = checkbox]").attr("name");
+                    o.input.find("input[type = checkbox][name = "+id+"]").click();
+                    o.netBarN.find("input[type = checkbox][name = "+id+"]").click();
+                    $(this).remove();
+                },
+                inputClick:function(tHis,o){
+                    var nInput =  tHis.find("input[type = checkbox]");
+                    var checkEd = nInput.attr("checked");
+                    try{
+                        if(checkEd){
+                            view.unInput(o,tHis);
+                        }else{
+                            view.enInput(o,tHis);
+                            if(tHis.attr("type") == "netPolice"){
+                                view.unInput(o,tHis.siblings("dd"));
+                            }
+                            else{
+                                view.unInput(o,tHis.siblings("dd[type = netPolice]"));
+                            }
+                        }
+                        view.changeNetPolice_i(tHis,o);
+
+                    }catch (e){
+
+                    }
+
+                },
+                inputClickFn:function(e){
+                    var o = e.data.o;
+                    event.inputClick($(this),o);
+                    o.callFn.apply(o);
+                    return false;
+                }
+
+
+            }
+            function heightFilterObj(args){
+                return new heightFilterObj.fn.init(args);
+            }
+            heightFilterObj.fn = heightFilterObj.prototype ={
+                init:function(args){
+                    $.extend(this,args);
+                    this.clear();
+                    event.bindEvent(this);
+                }
+            }
+            heightFilterObj.fn.init.prototype = heightFilterObj.fn;
+
+            heightFilterObj.fn.clear = function(){
+                var te = this;
+                this.input.each(function(){
+                    view.unInput(te,$(this));
+                });
+            }
+
+            heightFilterObj.fn.getData = function(){
+                var attr = [];
+                try{
+                    this.resN.find("input[type = checkbox]").each(function(){
+                        attr.push($(this).attr("name"));
+                    });
+                    return attr;
+                }catch(e){
+
+                }
+            }
+            heightFilterObj.fn.netBar = function(data){
+                this.netBarN.find("ul").html("");
+                for(var key  in  data){
+                    var html = '<li class="checked_bin"><label><i></i>' +
+                            '<input type="checkbox" name="'+key+'"></label>'+data[key]+'</li>';
+                    $(html).appendTo(this.netBarN.find("ul")).bind("click",{o:this},function(e){
+                        var o = e.data.o;
+                        event.inputClick($(this),o);
+                        return false;
+                    });
+                }
+            }
+
+
+
+            $.fn.heightFilter = function(args){
+                return heightFilterObj(args);
+            }
+
+            $(function(){
+                var netBarData = {
+                    "1000":"象山小青虫网吧",
+                    "1001":"象山昌锦网吧",
+                    "1002":"象山天翔网吧",
+                    "1003":"象山小青虫网吧",
+                    "1004":"象山小青虫网吧",
+                    "1005":"象山小青虫网吧"
+                }
+
+                $.fn.heightFilter({
+                    resN:$("#che_res ul"),
+                    input:$(".checked_bin"),
+                    netBarN:$("#net_bar"),
+                    netPoliceN:$("#ch_netPolice"),
+                    callFn:function(){
+                        var c= this.getData();
+                        this.netBar(netBarData);
+                    }
+                });
+            })
+        })($);
+    </script>
+</head>
+<body>
+
+<!--弹出check选择-->
+<div class="checkPop_sl pop_de" id="police_sle" >
+    <button class="close"></button>
+    <p class="checkPop_t che_fn">
+        <label>Menu</label>
+    </p>
+
+
+
+    <div class="center">
+        <div class="checkPop_sub che_fn" id="che_res">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="checkPop_type che_fn" id="ch_industry">
+            <ul>
+                <li class="checked_bin">
+                    <label>
+                        <i class="ch_enable"></i>
+                        <input type="checkbox"  name="001">
+                    </label>
+                    网吧
+                </li>
+                <li class="checked_bin">
+                    <label>
+                        <i></i>
+                        <input type="checkbox" name="002">
+                    </label>
+                    宾馆
+                </li>
+                <li class="checked_bin">
+                    <label>
+                        <i></i>
+                        <input type="checkbox" name="003">
+                    </label>
+                    非经
+                </li>
+            </ul>
+        </div>
+        <div class="checkPop_police che_fn" id="ch_netPolice">
+            <ul>
+                <li>
+                    <span><i></i>东钱湖分局</span>
+                    <dl>
+                        <dd class="checked_bin netPolice" type="netPolice">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="004">
+                            </label>
+                            东钱湖分局
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="005">
+                            </label>
+                            东柳派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="006">
+                            </label>
+                            明楼派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="007">
+                            </label>
+                            百丈派出所
+                        </dd>
+                    </dl>
+                </li>
+                <li><span><i></i>机场分局</span></li>
+                <li><span><i></i>奉化市公安局</span></li>
+                <li><span><i></i>海曙分局</span></li>
+                <li><span><i></i>江东分局</span></li>
+                <li><span><i></i>镇海分局</span></li>
+                <li><span><i></i>鄞州分局</span></li>
+                <li><span><i></i>象山县公安局</span></li>
+                <li><span><i></i>宁海县公安局</span></li>
+                <li><span><i></i>鄞州分局</span></li>
+                <li><span><i></i>余姚市公安局</span></li>
+                <li><span><i></i>宁海县公安局</span></li>
+                <li><span><i></i>江北分局</span></li>
+                <li><span><i></i>北仑分局</span></li>
+                <li><span><i></i>国家高新技术产业开发区分局</span>
+                    <dl>
+                        <dd class="checked_bin netPolice" type="netPolice">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="008">
+                            </label>
+                            国家高新技术产业开发区分局
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="009">
+                            </label>
+                            东柳派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="010">
+                            </label>
+                            明楼派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="011">
+                            </label>
+                            百丈派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="012">
+                            </label>
+                            东柳派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="013">
+                            </label>
+                            明楼派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="014">
+                            </label>
+                            百丈派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="015">
+                            </label>
+                            东柳派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="016">
+                            </label>
+                            明楼派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="017">
+                            </label>
+                            百丈派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="018">
+                            </label>
+                            东柳派出所
+                        </dd>
+                        <dd class="checked_bin">
+                            <label>
+                                <i></i>
+                                <input type="checkbox" name="019">
+                            </label>
+                            明楼派出所
+                        </dd>
+                        <dd class="checked_bin"><label><i></i><input type="checkbox" name="020"></label> 百丈派出所</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <div class="checkPop_action che_fn" id="net_bar">
+            <ul style="border-bottom: 0px;">
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

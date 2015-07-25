@@ -1,0 +1,180 @@
+@CHARSET "utf-8";
+
+
+* {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+body, p, form, ul, li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.body_conetent {
+	width: 100%;
+	color:#333333;
+	text-align:center;
+	margin:0px auto;
+}
+
+.content{
+	margin:40px 50px 0px 50px;
+	min-width: 1024px;
+}
+
+
+
+/**S left_menu*/
+.tr_div{width: 100%;height: 100%;}
+.fl_parent {
+	float: left;
+}
+
+.fl_parent .btn {
+	width: 120px;
+	height: 30px;
+	border: 1px solid #ddd;
+	float: inherit;
+	margin-right: 10px;
+	background: #ddd;
+	text-align: center;
+	line-height: 27px;
+}
+
+
+.fl_parent .btn:HOVER {
+	background-color: #fff;
+	cursor: pointer;
+	cursor: hand;
+}
+/**E left_menu*/
+
+/**S common button style*/
+.btn {
+	-moz-border-radius: 3em;
+	-webkit-border-radius: 3em;
+	border-radius: 3em;
+	-moz-box-shadow: 0px 0px 3px #333333;
+	-webkit-box-shadow: 0px 0px 3px #333333;
+	box-shadow: 0px 0px 3px #333333;
+}
+/**E common button style*/
+.main_content {
+	height: 560px;
+	border: 1px solid #ddd;
+	margin-top: 15px;
+	background-color: #f8f8f8;
+}
+
+/**S left_menu*/
+.left_menu {
+	width: 240px;
+	height: 100%;
+	border-right:3px double #ddd;
+	margin-right: 10px;
+	max-height: 540px;
+	overflow: auto;
+}
+
+.left_menu ul {
+	list-style: none;
+	padding-left: 0px;
+	width: 100%;
+}
+
+.left_menu ul li>a {
+	background-color: #f7f7f7;
+	background-image: linear-gradient(to bottom, #fafafa, #f2f2f2);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #dedede;
+	box-shadow: 0 1px 0 0 #ffffff inset;
+	height: 50px;
+	line-height: 58px;
+	padding-left: 15px;
+	transition: background 0.5s ease-out 0s;
+	color: #4a4a4a;
+	display: block;
+}
+.left_menu ul li > a:HOVER {cursor: pointer;cursor: hand;}
+
+.left_menu ul li a i{
+	height: 30px;
+	width: 30px;
+	background-image: url("../img/nav.png");
+	background-repeat:no-repeat;
+	margin-right:8px;
+	vertical-align: middle;
+	
+}
+
+.menu_11 i{background-position: -30px -30px;}
+.menu_22 i{background-position: -30px -60px;}
+.menu_33 i{background-position: -30px -90px;}
+.menu_44 i{background-position: -30px -120px;}
+.menu_55 i{background-position: -30px -150px;}
+
+
+
+.left_menu ul li a span{
+	height: 9px;
+	width: 9px;
+	background: rgba(0,0,0,0) url("../img/nav-arrow.png") no-repeat scroll -8px 0;
+	display: inline-block;
+	margin-left: 56px;
+	
+}
+
+.left_menu ul li .menu_open span{
+	background-position: -8px -9px;
+}
+
+dl {padding: 10px 30px;display: none;border-bottom: 1px solid #ddd;}
+dl dd{margin-left: 0px;margin-bottom: 5px;}
+dl dd a{text-align: left;line-height: 36px;display: block;padding-left: 25px;}
+.left_menu  dl dd a i{width: 20;height: 20px;display: inline-block;background:url("../img/sub-nav.png") no-repeat 0 0;}
+
+.left_menu  dl .menu_cl_11 i{background-position:0 -20px;}
+.left_menu  dl .menu_cl_12 i{background-position:0 -40px;}
+.left_menu  dl .menu_cl_13 i{background-position:0 -60px;}
+.left_menu  dl .menu_cl_14 i{background-position:0 -80px;}
+.left_menu  dl .menu_cl_15 i{background-position:0 -100px;}
+.left_menu  dl .menu_cl_21 i{background-position:0 -120px;}
+.left_menu  dl .menu_cl_22 i{background-position:0 -140px;}
+.left_menu  dl .menu_cl_23 i{background-position:0 -160px;}
+.left_menu  dl .menu_cl_24 i{background-position:0 -180px;}
+.left_menu  dl .menu_cl_25 i{background-position:0 -200px;}
+.left_menu  dl .menu_cl_31 i{background-position:0 -220px;}
+.left_menu  dl .menu_cl_32 i{background-position:0 -240px;}
+.left_menu  dl .menu_cl_33 i{background-position:0 -260px;}
+.left_menu  dl .menu_cl_34 i{background-position:0 -280px;}
+.left_menu  dl .menu_cl_35 i{background-position:0 -300px;}
+
+
+.left_menu dl dd:HOVER {
+	background-color: #fefefe;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #ffffff, 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.left_menu dl .cur_true{background-color: #f3f3f3;border-radius: 3px;box-shadow: 0 1px 0 #ffffff, 0 1px 1px rgba(0, 0, 0, 0.2) inset;}
+
+/**E left_menu*/
+
+/**S right_content */
+.right_content{display:inline-block;}
+/**E right_content */
+
+/**S common*/
+.fl_parent .div_inher {float: inherit;padding: 10px;}
+i{display: inline-block;}
+/**E common*/
+
+
+
+
+

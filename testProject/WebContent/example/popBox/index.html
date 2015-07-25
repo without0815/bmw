@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="keywords" content="seajs, spm, node.js, nodejs" />
+<title>seajs测试弹框实现</title>
+<style>
+.box {
+	width: 256px;
+	height: 193px;
+	padding: .5em;
+}
+a img {
+	border: 0;
+}
+</style>
+
+<script>
+	seajs.use("example/popBoxMain.js", function(popBox) {
+		popBox.bind(document.getElementById("test"));
+	});
+</script>
+
+
+</head>
+
+<body>
+	<div>
+		<a href="example/popBox/beLoaded.html"  id="test" title="点击查看大图">
+			<img src="example/popBox/thumb_AX2A6238_1024.jpg" width="200" height="160" />
+		</a>
+	</div>
+</body>
+</html>
