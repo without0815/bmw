@@ -4,7 +4,6 @@ define(function(require,exports,module){
 	var creatElement=require('../../js/base/creatElement'),
 	styleJson =require('../../js/data/styleJson');
 	
-	
 	(function(window){
 		
 		var popBox={};
@@ -18,7 +17,6 @@ define(function(require,exports,module){
 				
 				var pop_boxId = ""||"pop_box";
 				
-
 				var popBox_obj= popBox.creatediv(pop_boxId);
 				popBox_obj.moveable = false;
 				popBox.initPopBox($("#Popup"));
@@ -27,13 +25,12 @@ define(function(require,exports,module){
 				
 				$("#"+pop_boxId).find(".close").bind("click",function(){
 					$("#"+pop_boxId).remove();
-				})
+				});
 				
 				$(window).resize(function() {
 					popBox.initPopBox($("#Popup"));
 					popBox.initMask($("#Mask"));
 				});
-				
 				
 				$("#top_move").mousedown(function(e){
 					
@@ -67,7 +64,7 @@ define(function(require,exports,module){
 							}else if(e.clientY - movetoY>0){
 								$(popBoxObj).css("left", 0);
 								$(popBoxObj).css("top", e.clientY - movetoY);	
-							}
+							};
 						}else {
 							if(maxHeight<=e.clientY - movetoY&&maxWidth<=e.clientX - movetoX){
 								$(popBoxObj).css("top", maxHeight);
@@ -83,28 +80,29 @@ define(function(require,exports,module){
 							}else{
 								$(popBoxObj).css("left", e.clientX - movetoX);
 								$(popBoxObj).css("top", e.clientY - movetoY);
-							}
-						}
+							};
+						};
 					});
 						
 				});
 				
 				$(document).mouseup(function(){
 					$pb.fn.defaultVal.moveable = false ;
-				})
-			}
+				});
+			};
 			
 			this.destroy=function(){
 				$(init.popBox_pro.defaultVal.pid).remove();
-			}
+			};
 			
-		}
+		};
 		
 		popBox.fn.defaultVal={
 				pid:"pop_box",
 				popBox:"Popup",
 				moveable:false
-		}
+		};
+		
 		
 //		popBox.fn.pid=""||"pop_box";
 //		popBox.fn.moveable= false;
@@ -115,7 +113,7 @@ define(function(require,exports,module){
 		
 		popBox.fn.getPid=function(pop_boxId){
 			return pop_boxId||popBox.fn.defaultVal.pid;
-		}
+		};
 		
 		
 		popBox.fn.win={
@@ -183,8 +181,6 @@ define(function(require,exports,module){
 		    
 		    //popBox title object div=()
 		    
-		    
-		    
 		    popBoxParent.id= pId;
 		    popBoxParent.innerHTML=div_blocked;
 		    popBoxParent.appendChild(popBoxObj);
@@ -192,11 +188,11 @@ define(function(require,exports,module){
 //		    popBoxParent.innerHTML=div_blocked+div_popBox;
 			document.body.appendChild(popBoxParent);
 			return popBoxParent;
-		}
-		
+		};
 		
 		window.$pb  = popBox ;
 		
-	})(window)
+		
+	})(window);
 	
 })
